@@ -49,7 +49,7 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <MultiStep step={step}>
+          <MultiStep step={step} power={step > 10}>
             <QuestionOneLine title="Первый вопрос" question="Твои ФИО" onInput={onNameInput} error={error}/>
             <QuestionOneLine title="Второй вопрос" question="Твой номер телефона" onInput={onQuestionAnswer(3)}/>
             <QuestionOneLine title="Третий вопрос" question="Какой у тебя цвет глаз?" onInput={onQuestionAnswer(4)}/>
@@ -71,7 +71,7 @@ export default function Home() {
               <span>Мотивация</span>
             </QuestionChoice>
             <QuestionOneLine title="Десятый вопрос" question={"Продолжи фразу: \"Мир станет лучше, если...\""} onInput={onQuestionAnswer(11)}/>
-            <Result index={final["КОМАНДА"]}/>
+            <Result index={final?final["КОМАНДА"]:null}/>
           </MultiStep>
 
         </div>
