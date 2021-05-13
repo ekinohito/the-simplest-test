@@ -1,7 +1,6 @@
-import React, {createContext, useContext, useState} from 'react'
-import styles from "../styles/Home.module.css";
+import React, {useContext} from 'react'
 import {PowerContext, ValuesContext} from "./MultiStep";
-import {Radio, RadioGroup} from "@material-ui/core";
+import {Button, Card, Radio, RadioGroup} from "@material-ui/core";
 
 
 export default function QuestionChoice({title, question, children, onInput, error}) {
@@ -9,7 +8,7 @@ export default function QuestionChoice({title, question, children, onInput, erro
     const [allSelected, setAllSelected] = useContext(ValuesContext)
     const selected = allSelected[title]
     const setSelected = (value) => setAllSelected({...allSelected, [title]: value})
-    return <div className={styles.card}>
+    return <Card style={{padding: "20px"}}>
         <h2>{title}</h2>
         <p>{question}</p>
         <RadioGroup aria-label="gender" name="gender1">
@@ -21,7 +20,7 @@ export default function QuestionChoice({title, question, children, onInput, erro
                 </div>)
             }
         </RadioGroup>
-        <button disabled={power || selected === undefined} onClick={onInput}>Ввести</button>
+        <Button disabled={power || selected === undefined} onClick={onInput}>Ввести</Button>
         <p>{error}</p>
-    </div>
+    </Card>
 }
