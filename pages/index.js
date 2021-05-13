@@ -41,20 +41,20 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Добро пожаловать на сборы!
-        </h1>
+        <h3 className={styles.title}>
+          Добро пожаловать на выезд Art Club BMSTU!
+        </h3>
 
         <p className={styles.description}>
-          Этот тест поможет определить твою группу
+          Этот тест поможет распределить тебя в команду!
         </p>
 
         <div className={styles.grid}>
           <MultiStep step={step} power={step > 10}>
             <QuestionOneLine title="Первый вопрос" question="Твои ФИО" onInput={onNameInput} error={error}/>
             <QuestionOneLine title="Второй вопрос" question="Твой номер телефона" onInput={onQuestionAnswer(3)}/>
-            <QuestionOneLine title="Третий вопрос" question="Какой у тебя цвет глаз?" onInput={onQuestionAnswer(4)}/>
-            <QuestionOneLine title="Четвертый вопрос" question="Какое твоё любимое животное?" onInput={onQuestionAnswer(5)}/>
+            <QuestionOneLine title="Третий вопрос" question="Номер твоей группы" onInput={onQuestionAnswer(4)}/>
+            <QuestionOneLine title="Четвертый вопрос" question="Какой у тебя цвет глаз?" onInput={onQuestionAnswer(5)}/>
             <QuestionChoice title="Пятый вопрос" question="Дружба или соперничество?" onInput={onQuestionAnswer(6)}>
               <span>Дружба</span>
               <span>Соперничество</span>
@@ -62,12 +62,12 @@ export default function Home() {
             <QuestionOneLine title="Шестой вопрос" question="Какие 3 предмета ты бы взял с собой на выезд?" onInput={onQuestionAnswer(7)}/>
             <QuestionOneLine title="Седьмой вопрос" question="Опиши себя одним прилагательным" onInput={onQuestionAnswer(8)}/>
             <QuestionChoice title="Восьмой вопрос" question="Какой ты сегодня?" onInput={onQuestionAnswer(9)}>
-              <span>Меланхоличный позер</span>
+              <span>Меланхоличный козер</span>
               <span>Дышащий творчеством артклабовец</span>
               <span>А ты?</span>
               <span>Латентный прогульщик</span>
             </QuestionChoice>
-            <QuestionChoice title="Девятый вопрос" question="Для тебя страх - это преграда или мотивация?" onInput={onQuestionAnswer(10)}>
+            <QuestionChoice title="Девятый вопрос" question="Для тебя страх — это преграда или мотивация?" onInput={onQuestionAnswer(10)}>
               <span>Преграда</span>
               <span>Мотивация</span>
             </QuestionChoice>
